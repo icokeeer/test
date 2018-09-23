@@ -33,7 +33,7 @@
     </dependencies>
 
     <build>
-        <finalName>test</finalName>
+        <finalName>wartest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
