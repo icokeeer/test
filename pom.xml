@@ -33,7 +33,7 @@
     </dependencies>
 
     <build>
-        <finalName>wartest</finalName>
+        <finalName>warTest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -43,6 +43,24 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+                 <plugin>
+    <groupId>com.spotify</groupId>
+    <artifactId>docker-maven-plugin</artifactId>
+    <version>0.4.11</version>
+    <configuration>
+        <imageName>tomcat8-warTest</imageName>
+        <imageTags>
+            <imageTag>latest</imageTag>
+        </imageTags>
+        <dockerDirectory>src/main/docker</dockerDirectory>
+        <resources>
+            <resource>
+                <targetPath>/data/</targetPath>
+                <include>warTest.war</include>
+            </resource>
+        </resources>
+    </configuration>
+</plugin>
         </plugins>
 
     </build>
